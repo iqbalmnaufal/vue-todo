@@ -5,7 +5,7 @@
         <h5 class="card-title">SIMPLE TODO APP</h5>
         <div class="row">
           <div class="col-10">
-            <input v-model="todo" type="text" class="form-control">
+            <input v-model="todo" type="text" class="form-control" @keyup.enter="add">
           </div>
           <div class="col-2">
             <button class="btn btn-success" @click="add">ADD</button>
@@ -30,6 +30,7 @@ export default {
   methods: {
     add(){
       this.todos.push(this.todo)
+      this.todo = ""
     }
   }
 }
